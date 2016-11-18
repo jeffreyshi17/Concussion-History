@@ -1,13 +1,12 @@
  .option {
      margin-left: 40px;
  }
- .suboption {
-     margin-left: 60px;
- }
  .subform {
      display: none;
-     margin-left: 60px;
  }
+.suboption {
+     margin-left: 60px;
+}
  body {
      margin: 40px auto;
      max-width: 650px;

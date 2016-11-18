@@ -22,49 +22,30 @@
                     <% if (data[0]["Questions"][i].answers[j].type.indexOf("text")!=-1){%>
                     <input type="text" id="<%= data[0]["Questions"][i].answers[j].id %>">
                     <% }%>
-                
+                    <% if (data[0]["Questions"][i].answers[j].suboptions.length>0){%>
                     <div class="subform" id="<%= data[0]["Questions"][i].answers[j].id + "form"%>">
-                       <% for (var k = 0; k < data[0]["Questions"][i].answers[j].suboptions.length; k++) { %>
-                        <div class = "suboption">
-                            <% if (data[0]["Questions"][i].answers[j].suboptions[k].type.indexOf("checkbox")!=-1){%>
-                            <input type="checkbox" id="<%= data[0]["Questions"][i].answers[j].suboptions[k].id %>">
-                            <% }%>
-                            <% if (data[0]["Questions"][i].answers[j].suboptions[k].type.indexOf("radio")!=-1){%>
-                            <input type="radio" name="<%= data[0]["Questions"][i].answers[j].id %>" id="<%= data[0]["Questions"][i].answers[j].suboptions[k].id %>">
-                            <% }%>
-                            <label for="<%=data[0]["Questions"][i].answers[j].suboptions[k].id%>"><%= data[0]["Questions"][i].answers[j].suboptions[k].text %></label>
-                            <% if (data[0]["Questions"][i].answers[j].suboptions[k].type.indexOf("text")!=-1){%>
-                            <input type="text" id="<%= data[0]["Questions"][i].answers[j].suboptions[k].id %>">
-                            <% }%>
-                            </div>
-                       <% }%>
+                        <div class="suboption">
+                           <% for (var k = 0; k < data[0]["Questions"][i].answers[j].suboptions.length; k++) { %>
+                                <% if (data[0]["Questions"][i].answers[j].suboptions[k].type.indexOf("checkbox")!=-1){%>
+                                <input type="checkbox" id="<%= data[0]["Questions"][i].answers[j].suboptions[k].id %>">
+                                <% }%>
+                                <% if (data[0]["Questions"][i].answers[j].suboptions[k].type.indexOf("radio")!=-1){%>
+                                <input type="radio" name="<%= data[0]["Questions"][i].answers[j].id %>" id="<%= data[0]["Questions"][i].answers[j].suboptions[k].id %>">
+                                <% }%>
+                                <label for="<%=data[0]["Questions"][i].answers[j].suboptions[k].id%>"><%= data[0]["Questions"][i].answers[j].suboptions[k].text %></label>
+                                <% if (data[0]["Questions"][i].answers[j].suboptions[k].type.indexOf("text")!=-1){%>
+                                <input type="text" id="<%= data[0]["Questions"][i].answers[j].suboptions[k].id %>">
+                                <% }%>
+                            <br>
+                           <% }%>
+                        </div>
                     </div>
+                    <% }%>
                 <br>
                <% } %>
             </form>
          <% } %>
        
-       <script>
-        $(document).ready(function () {
-        $('input:checkbox').change(function () {
-            if ($(this).is(":checked")) {
-                document.getElementById((this).id +"form").style.display = "inline";
-            }
-            else {
-                document.getElementById((this).id +"form").style.display = "none";
-            }
-        });
-            $('input:radio').change(function () {
-                if ($(this).is(":checked")) {
-                    var x = document.getElementsByName(this.name);
-                    for (var i = 0; i<x.length; i++){
-                        document.getElementById(x[i].id + "form").style.display = "none";
-                    }
-                    document.getElementById((this).id +"form").style.display = "inline";
-                }
-            });
-        });
-       
-       </script>
+       <script src="/js/script.js"></script>
    </body>
 </html>
