@@ -193,7 +193,7 @@
                 , "text": "If yes, for how long?"
 			}]
 		}, {
-            "id": "CH_4_0"
+            "id": "CH_4_1"
             , "type": "radio"
             , "text": "no"
             , "suboptions": []
@@ -207,7 +207,7 @@
             , "text": "yes"
             , "suboptions": []
 		}, {
-            "id": "CH_5_0"
+            "id": "CH_5_1"
             , "type": "radio"
             , "text": "no"
             , "suboptions": []
@@ -225,7 +225,7 @@
                 , "text": "If yes, for how long?"
 			}]
 		}, {
-            "id": "CH_6_0"
+            "id": "CH_6_1"
             , "type": "radio"
             , "text": "no"
             , "suboptions": []
@@ -243,7 +243,7 @@
                 , "text": "If yes, please list dates and describe the details, setting sin which it happened, and how long it took for you to recover?"
             }
 		}, {
-            "id": "CH_7_0"
+            "id": "CH_7_1"
             , "type": "radio"
             , "text": "no"
             , "suboptions": []
@@ -261,7 +261,7 @@
                 , "text": "If yes, please list the dates and describe the details and setting in which it happened:"
 			}]
 		}, {
-            "id": "CH_8_0"
+            "id": "CH_8_1"
             , "type": "radio"
             , "text": "no"
             , "suboptions": []
