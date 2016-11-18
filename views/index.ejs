@@ -5,46 +5,96 @@
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
    </head>
    <body>
+      <!-- Title, Description begin -->
+
       <h1><%= data[0].title %></h1>
       <h2><%= data[0].desc %></h2>
-         <% for(var i=0; i<data[0]["questions"].length; i++) { %>
+      <!-- Title, Description end -->
+
+       <% for(var i=0; i<data[0]["questions"].length; i++) { %>
          <h3><%= data[0]["questions"][i].question %></h3>
-            <div class="option">
+       
+            <!-- answers begin -->
                <% for (var j = 0; j < data[0]["questions"][i].answers.length; j++) { %>
+            <div class="answer">
                 <% if (data[0]["questions"][i].answers[j].type.indexOf("checkbox")!=-1){%>
+                <!-- Add checkbox from type -->
                 <input type="checkbox" id="<%= data[0]["questions"][i].answers[j].id %>">
                 <% }%>
-                    <% if (data[0]["questions"][i].answers[j].type.indexOf("radio")!=-1){%>
-                    <input type="radio" name="<%= data[0]["questions"][i].id %>" id="<%= data[0]["questions"][i].answers[j].id %>">
-                    <% }%>
-                    <label for="<%=data[0]["questions"][i].answers[j].id%>"><%= data[0]["questions"][i].answers[j].text %></label>
                 
-                    <% if (data[0]["questions"][i].answers[j].type.indexOf("text")!=-1){%>
-                    <input type="text" id="<%= data[0]["questions"][i].answers[j].id %>">
-                    <% }%>
-                    <% if (data[0]["questions"][i].answers[j].options.length>0){%>
-                    <div class="subform" id="<%= data[0]["questions"][i].answers[j].id + "form"%>">
-                        <div class="option">
-                           <% for (var k = 0; k < data[0]["questions"][i].answers[j].options.length; k++) { %>
-                                <% if (data[0]["questions"][i].answers[j].options[k].type.indexOf("checkbox")!=-1){%>
-                                <input type="checkbox" id="<%= data[0]["questions"][i].answers[j].options[k].id %>">
-                                <% }%>
-                                <% if (data[0]["questions"][i].answers[j].options[k].type.indexOf("radio")!=-1){%>
-                                <input type="radio" name="<%= data[0]["questions"][i].answers[j].id %>" id="<%= data[0]["questions"][i].answers[j].options[k].id %>">
-                                <% }%>
-                                <label for="<%=data[0]["questions"][i].answers[j].options[k].id%>"><%= data[0]["questions"][i].answers[j].options[k].text %></label>
-                                <% if (data[0]["questions"][i].answers[j].options[k].type.indexOf("text")!=-1){%>
-                                <input type="text" id="<%= data[0]["questions"][i].answers[j].options[k].id %>">
-                                <% }%>
+                <% if (data[0]["questions"][i].answers[j].type.indexOf("radio")!=-1){%>
+                <!-- Add radio from type -->
+                <input type="radio" name="<%= data[0]["questions"][i].id %>" id="<%= data[0]["questions"][i].answers[j].id %>">
+                <% }%>
+                
+                <!-- Add label to input -->
+                <label for="<%=data[0]["questions"][i].answers[j].id%>"><%= data[0]["questions"][i].answers[j].text %></label>
+
+                <% if (data[0]["questions"][i].answers[j].type.indexOf("text")!=-1){%>
+                <!-- Add textbox from type -->
+                <input type="text" id="<%= data[0]["questions"][i].answers[j].id %>">
+                <% }%>
+                
+                <% if (data[0]["questions"][i].answers[j].options.length>0){%>
+                <!-- options begin -->
+                <div class="subform" id="<%= data[0]["questions"][i].answers[j].id + "form"%>"> 
+                       <% for (var k = 0; k < data[0]["questions"][i].answers[j].options.length; k++) { %>
+                            <% if (k!=0){ %>
                             <br>
-                           <% }%>
-                        </div>
+                            <% }%>
+                            <% if (data[0]["questions"][i].answers[j].options[k].type.indexOf("checkbox")!=-1){%>
+                            <!-- Add checkbox from type -->
+                            <input type="checkbox" id="<%= data[0]["questions"][i].answers[j].options[k].id %>">
+                            <% }%>
+                
+                            <% if (data[0]["questions"][i].answers[j].options[k].type.indexOf("radio")!=-1){%>
+                            <!-- Add radio from type -->
+                            <input type="radio" name="<%= data[0]["questions"][i].answers[j].id %>" id="<%= data[0]["questions"][i].answers[j].options[k].id %>">
+                            <% }%>
+                
+                            <!-- Add label to input -->
+                            <label for="<%=data[0]["questions"][i].answers[j].options[k].id%>"><%= data[0]["questions"][i].answers[j].options[k].text %></label>
+
+                            <% if (data[0]["questions"][i].answers[j].options[k].type.indexOf("text")!=-1){%>
+                            <!-- Add textbox from type -->
+                            <input type="text" id="<%= data[0]["questions"][i].answers[j].options[k].id %>">
+                            <% }%>
+                    
+
+                            <% if (data[0]["questions"][i].answers[j].options[k].suboptions.length>0){%>
+                            <!-- suboptions begin -->
+                                <div class="subform" id="<%= data[0]["questions"][i].answers[j].id + "form"%>">
+                                   <% for (var l = 0; l < data[0]["questions"][i].answers[j].options[k].suboptions[l].length; l++) { %>
+                                        <!-- Add checkbox from type -->
+                                        <% if (data[0]["questions"][i].answers[j].options[k].suboptions[l].type.indexOf("checkbox")!=-1){%>
+                                        <input type="checkbox" id="<%= data[0]["questions"][i].answers[j].options[k].suboptions[l].id %>">
+                                        <% }%>
+
+                                        <!-- Add radio from type -->
+                                        <% if (data[0]["questions"][i].answers[j].options[k].suboptions[l].type.indexOf("radio")!=-1){%>
+                                        <input type="radio" name="<%= data[0]["questions"][i].answers[j].options[k].id %>" id="<%= data[0]["questions"][i].answers[j].options[k].suboptions[l].id %>">
+                                        <% }%>
+
+                                        <!-- Add label to input -->
+                                        <label for="<%=data[0]["questions"][i].answers[j].options[k].suboptions[l].id%>"><%= data[0]["questions"][i].answers[j].options[k].suboptions[l].text %></label>
+
+                                        <!-- Add textbox from type -->
+                                        <% if (data[0]["questions"][i].answers[j].options[k].suboptions[l].type.indexOf("text")!=-1){%>
+                                        <input type="text" id="<%= data[0]["questions"][i].answers[j].options[k].suboptions[l].id %>">
+                                        <% }%>
+                                   <% }%>
+                                </div>
+                            <% }%>
+                            <!-- suboptions end -->
+                       <% }%>
                     </div>
-                    <% }%>
-                <br>
-               <% } %>
+                <% }%>
+                <!-- options end -->
             </div>
+           <% } %>
+            <!-- answers end -->
          <% } %>
+         <!-- questions end -->
        
        <script src="/js/script.js"></script>
    </body>

@@ -3,7 +3,7 @@
         $('input:checkbox').change(function () {
             if ($(this).is(":checked")) {
                 if(document.getElementById(this.id +"form")) {
-                    document.getElementById(this.id +"form").style.display = "inline";
+                    document.getElementById(this.id +"form").style.display = "block";
                     var m = $("#"+this.id + "form").find('.suboption').find('input:checkbox')
                     for (var j = 0; j<m.length; j++){
                         m[j].checked = false;
@@ -30,7 +30,7 @@
                             $("#"+x[i].id + "form").find('input:text').val('');
                         }
                     }
-                    document.getElementById(this.id +"form").style.display = "inline";
+                    document.getElementById(this.id +"form").style.display = "block";
                 }
             });
         });

@@ -18,38 +18,47 @@
                 "id": "CH_0_1_0"
                 , "type": "checkbox"
                 , "text": "Frozen ground (e.g. ice rink, ski/snowboarding trail, etc.)"
+                , "suboptions": []
 			}, {
                 "id": "CH_0_1_1"
                 , "type": "checkbox"
                 , "text": "Grass"
+                , "suboptions": []
 			}, {
                 "id": "CH_0_1_2"
                 , "type": "checkbox"
                 , "text": "Wall"
+                , "suboptions": []
 			}, {
                 "id": "CH_0_1_3"
                 , "type": "checkbox"
                 , "text": "Car door"
+                , "suboptions": []
 			}, {
                 "id": "CH_0_1_4"
                 , "type": "checkbox"
                 , "text": "Concrete"
+                , "suboptions": []
 			}, {
                 "id": "CH_0_1_5"
                 , "type": "checkbox"
                 , "text": "Furniture"
+                , "suboptions": []
 			}, {
                 "id": "CH_0_1_6"
                 , "type": "checkbox"
                 , "text": "Synthetic turf"
+                , "suboptions": []
 			}, {
                 "id": "CH_0_1_7"
                 , "type": "checkbox"
                 , "text": "Pole"
+                , "suboptions": []
 			}, {
                 "id": "CH_0_1_8"
                 , "type": "checkboxtext"
                 , "text": "Other:"
+                , "suboptions": []
 			}]
 		}, {
             "id": "CH_0_2"
@@ -59,30 +68,37 @@
                 "id": "CH_0_2_0"
                 , "type": "checkbox"
                 , "text": "Baseball/softball"
+                , "suboptions": []
 			}, {
                 "id": "CH_0_2_1"
                 , "type": "checkbox"
                 , "text": "Soccer ball"
+                , "suboptions": []
 			}, {
                 "id": "CH_0_2_2"
                 , "type": "checkbox"
                 , "text": "Hockey puck"
+                , "suboptions": []
 			}, {
                 "id": "CH_0_2_3"
                 , "type": "checkbox"
                 , "text": "Basketball"
+                , "suboptions": []
 			}, {
                 "id": "CH_0_2_4"
                 , "type": "checkbox"
                 , "text": "Lacrosse ball"
+                , "suboptions": []
 			}, {
                 "id": "CH_0_2_5"
                 , "type": "checkbox"
                 , "text": "Sports equipment (e.g. hockey stick, golf club, etc.)"
+                , "suboptions": []
 			}, {
                 "id": "CH_0_2_6"
                 , "type": "checkboxtext"
                 , "text": "Other:"
+                , "suboptions": []
 			}]
 		}, {
             "id": "CH_0_3"
@@ -92,26 +108,32 @@
                 "id": "CH_0_3_0"
                 , "type": "checkbox"
                 , "text": "Head to head"
+                , "suboptions": []
 			}, {
                 "id": "CH_0_3_1"
                 , "type": "checkbox"
                 , "text": "Knee to head"
+                , "suboptions": []
 			}, {
                 "id": "CH_0_3_2"
                 , "type": "checkbox"
                 , "text": "Fist to head"
+                , "suboptions": []
 			}, {
                 "id": "CH_0_3_3"
                 , "type": "checkbox"
                 , "text": "Elbow to head"
+                , "suboptions": []
 			}, {
                 "id": "CH_0_3_4"
                 , "type": "checkbox"
                 , "text": "Foot to head"
+                , "suboptions": []
 			}, {
                 "id": "CH_0_3_5"
                 , "type": "checkboxtext"
                 , "text": "Other:"
+                , "suboptions": []
 			}]
 		}]
 	}, {
@@ -173,6 +195,7 @@
                 "id": "CH_3_0_0"
                 , "type": "text"
                 , "text": "If yes, please specify:"
+                , "suboptions": []
 			}]
 		}, {
             "id": "CH_3_1"
@@ -191,6 +214,7 @@
                 "id": "CH_4_0_0"
                 , "type": "text"
                 , "text": "If yes, for how long?"
+                , "suboptions": []
 			}]
 		}, {
             "id": "CH_4_1"
@@ -223,6 +247,7 @@
                 "id": "CH_6_0_0"
                 , "type": "text"
                 , "text": "If yes, for how long?"
+                , "suboptions": []
 			}]
 		}, {
             "id": "CH_6_1"
@@ -241,6 +266,7 @@
                 "id": "CH_7_0_0"
                 , "type": "text"
                 , "text": "If yes, please list dates and describe the details, setting sin which it happened, and how long it took for you to recover?"
+                , "suboptions": []
             }
 		}, {
             "id": "CH_7_1"
@@ -259,6 +285,7 @@
                 "id": "CH_8_0_0"
                 , "type": "text"
                 , "text": "If yes, please list the dates and describe the details and setting in which it happened:"
+                , "suboptions": []
 			}]
 		}, {
             "id": "CH_8_1"

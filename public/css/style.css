@@ -1,9 +1,10 @@
- .option {
+ .answer{
      margin-left: 40px;
  }
  .subform {
      display: none;
- }
+     margin-left: 60px;
+}
 .suboption {
      margin-left: 60px;
 }
