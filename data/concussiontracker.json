@@ -56,7 +56,7 @@
                 , "suboptions": []
 			}, {
                 "id": "CH_0_1_8"
-                , "type": "checkboxtext"
+                , "type": "checktext"
                 , "text": "Other:"
                 , "suboptions": []
 			}]
@@ -96,7 +96,7 @@
                 , "suboptions": []
 			}, {
                 "id": "CH_0_2_6"
-                , "type": "checkboxtext"
+                , "type": "checktext"
                 , "text": "Other:"
                 , "suboptions": []
 			}]
@@ -131,7 +131,7 @@
                 , "suboptions": []
 			}, {
                 "id": "CH_0_3_5"
-                , "type": "checkboxtext"
+                , "type": "checktext"
                 , "text": "Other:"
                 , "suboptions": []
 			}]
