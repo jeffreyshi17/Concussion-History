@@ -34,5 +34,10 @@ $(document).ready(function () {
                 }
         }
     }
+    
+    var descendents = document.getElementById('container').getElementsByTagName('INPUT');
+    for (var i = 0; i < descendents.length; ++i) {
+        descendents[i].disabled = "true";
+    }
 
 });

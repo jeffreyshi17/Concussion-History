@@ -90,3 +90,7 @@ $('#container').submit(function () {
     }
     return false;
 });
+
+document.getElementById("viewSavedAnswers").addEventListener("click", function () {
+    window.location.href = 'summary';
+});
