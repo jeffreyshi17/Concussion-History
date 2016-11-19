@@ -29,7 +29,9 @@ $(document).ready(function () {
                     $("#" + x[i].id + "form").find('input:text').val('');
                 }
             }
-            document.getElementById(this.id + "form").style.display = "block";
+            if (document.getElementById(this.id + "form")) {
+                document.getElementById(this.id + "form").style.display = "block";
+            }
         }
     });
 });
@@ -46,15 +48,45 @@ function checkFields(question) {
     }
     return true;
 }
+var localstoragedata;
 $('#container').submit(function () {
+    var data = {
+        "title": "Concussion History"
+        , "answers": []
+    };
     var questions = document.getElementById("container").getElementsByClassName("question");
+    var incomplete = 0;
     for (var i = 0; i < questions.length; i++) {
-        if (!checkFields(questions[i])) {            
+        if (!checkFields(questions[i])) {
             questions[i].getElementsByClassName("alert")[0].innerText = "**This question is required.";
-        } else {
+            incomplete++;
+        }
+        else {
             questions[i].getElementsByClassName("alert")[0].innerText = "";
         }
     }
+    if (incomplete == 0) {
+        var descendents = document.getElementById('container').getElementsByTagName('INPUT');
+        for (var i = 0; i < descendents.length; ++i) {
+            var e = descendents[i];
+            if (e.type == "text") {
+                if (e.value != "") {
+                    data.answers.push({
+                        id: e.id
+                        , answer: e.value
+                    });
+                }
+            }
+            if (e.type == "checkbox" || e.type == "radio") {
+                if (e.checked) {
+                    data.answers.push({
+                        id: e.id
+                        , answer: e.checked
+                    });
+                }
+            }
+        }
+        localStorage.setItem("CH", JSON.stringify(data));
+    }
     return false;
-    // oneFilled === true if at least one field has a value
 });

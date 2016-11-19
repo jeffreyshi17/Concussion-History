@@ -6,6 +6,8 @@ To do list:
 -Profit
 */
 
+//var summary = require("./summary");
+
 
 var express = require('express'),
 app = express(),
@@ -18,12 +20,16 @@ PORT =8080;
 var json_data_string = fs.readFileSync("data/concussiontracker.json", 'utf8');
 
 app.use(express.static('public'))
-
 app.set('view engine', 'ejs');
 app.get('/', function(req, res){
         res.locals.data = JSON.parse(json_data_string);
         res.render('index.ejs');
 });
 
+app.get('/summary', function(req, res){
+        res.locals.data = JSON.parse(json_data_string);
+        res.render('summary.ejs');
+});
 app.listen(PORT);
+
 console.log("Server working");

@@ -1,14 +1,13 @@
 <html>
 	<head>
 		<title><%= data[0].title %></title>
-		<link href="/css/style.css" rel="stylesheet" type="text/css">
+		<link href="/css/style2.css" rel="stylesheet" type="text/css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	</head>
 	<body>
-		<!-- Title, Description begin -->
-		<h1><%= data[0].title %></h1>
-		<h2><%= data[0].desc %></h2>
-		<!-- Title, Description end -->
+		<!-- Title begin -->
+		<h1><%= data[0].title %> Summary</h1>
+		<!-- Title end -->
 		<form id="container">
 			<% for(var i=0; i<data[0]["questions"].length; i++) { %>
 			<div class="question" id="<%= data[0]["questions"][i].id %>"> 
@@ -33,6 +32,7 @@
 					<% if (data[0]["questions"][i].answers[j].options.length>0){%>
 					<!-- options begin -->
 					<div class="option" id="<%= data[0]["questions"][i].answers[j].id + "form"%>">
+                        
 						<% for (var k = 0; k < data[0]["questions"][i].answers[j].options.length; k++) { %>
 				        <div class="optiondiv">
 						<% if (data[0]["questions"][i].answers[j].options[k].type.indexOf("check")!=-1){%>
@@ -74,7 +74,8 @@
 						</div>
 						<% }%>
 						<!-- suboptions end -->
-					</div>
+                            
+                        </div>
 						<% }%>
 					</div>
 					<% }%>
@@ -88,6 +89,6 @@
 			<br><br>
 			<input type="submit" value="Submit">
 		</form>
-		<script src="/js/script.js"></script>
+		<script src="/js/script2.js"></script>
 	</body>
 </html>
