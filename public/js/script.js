@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    if (localStorage.length === 0) {
+	document.getElementById("viewSavedAnswers").disabled=true;
+    }
     $('input:checkbox').change(function () {
         if ($(this).is(":checked")) {
             if (document.getElementById(this.id + "form")) {
@@ -34,10 +37,6 @@ $(document).ready(function () {
             }
         }
     });
-    if (localStorage.length === 0) {
-	 	document.getElementById("viewSavedAnswers").disabled=true;
-	}
-    
 });
 
 function checkFields(question) {
