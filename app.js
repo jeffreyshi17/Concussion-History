@@ -15,7 +15,7 @@ http = require('http'),
 server = http.createServer(app),
 fs = require('fs'),
 ejs = require('ejs'),
-PORT = 3000;
+port = process.env.PORT || 3000;
 
 var json_data_string = fs.readFileSync("data/concussiontracker.json", 'utf8');
 
@@ -30,6 +30,6 @@ app.get('/summary', function(req, res){
         res.locals.data = JSON.parse(json_data_string);
         res.render('summary.ejs');
 });
-app.listen(PORT);
+app.listen(port);
 
 console.log("Server working");
