@@ -91,6 +91,7 @@ $('#container').submit(function () {
         }
         localStorage.setItem("CH", JSON.stringify(data));
     }
+    window.reload;
     return false;
 });
 
