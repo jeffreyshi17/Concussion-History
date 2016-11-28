@@ -15,7 +15,7 @@ http = require('http'),
 server = http.createServer(app),
 fs = require('fs'),
 ejs = require('ejs'),
-PORT =4000;
+PORT =80;
 
 var json_data_string = fs.readFileSync("data/concussiontracker.json", 'utf8');
 
