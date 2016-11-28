@@ -90,9 +90,11 @@ $('#container').submit(function () {
             }
         }
         localStorage.setItem("CH", JSON.stringify(data));
-    }
-    window.reload;
     return false;
+    } else {
+    window.reload;
+	    return true;
+    }
 });
 
 document.getElementById("viewSavedAnswers").addEventListener("click", function () {
