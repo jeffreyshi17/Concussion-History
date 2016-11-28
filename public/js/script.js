@@ -34,6 +34,10 @@ $(document).ready(function () {
             }
         }
     });
+    if (localStorage.length === 0) {
+	 	document.getElementById("viewSavedAnswers").disabled=true;
+	}
+    
 });
 
 function checkFields(question) {
