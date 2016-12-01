@@ -1,14 +1,3 @@
-/*
-To do list:
--comment up code to make it easier to read (javascript)
--save answers to localstorage or json
--???
--Profit
-*/
-
-//var summary = require("./summary");
-
-
 var express = require('express'),
 app = express(),
 http = require('http'),
