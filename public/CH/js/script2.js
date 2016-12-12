@@ -9,9 +9,16 @@ $(document).ready(function () {
                 found = false;
             for (var j = 0; j < json.answers.length; j++) {
                 var ans = json.answers[j];
-                if (ans.id == e.id) {
-                    e.value = ans.answer;
+                console.log(ans.id, ans.type);
+                if (ans.id == e.id && (ans.type).indexOf(e.type) != -1) {
+                    //e.value = ans.answer;
                     found = true;
+                    var text = document.createElement('span');
+                    text.innerText = ans.answer;
+                    e.parentNode.appendChild(text);
+                    // $(e).remove();
+                    //i--;
+                    break;
                 }
             }
                 if (found == false) {

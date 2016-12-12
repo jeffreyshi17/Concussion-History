@@ -91,7 +91,7 @@ $('#container').submit(function () {
         }
         localStorage.setItem("CH", JSON.stringify(data));
         scroll(0,0)
-        location.reload();
+    window.location.href = 'symptoms';
     } 
         return false;
 });

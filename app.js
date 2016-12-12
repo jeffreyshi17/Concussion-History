@@ -6,18 +6,25 @@ fs = require('fs'),
 ejs = require('ejs'),
 port = process.env.PORT || 3000;
 
-var json_data_string = fs.readFileSync("data/concussiontracker.json", 'utf8');
-
 app.use(express.static('public'))
 app.set('view engine', 'ejs');
 app.get('/', function(req, res){
-        res.locals.data = JSON.parse(json_data_string);
         res.render('index.ejs');
 });
 
+app.get('/concussionhistory', function(req, res){
+        res.locals.data = JSON.parse(fs.readFileSync("data/concussiontracker.json", 'utf8'));
+        res.render('concussionhistory.ejs');
+});
 app.get('/summary', function(req, res){
-        res.locals.data = JSON.parse(json_data_string);
+        res.locals.data = JSON.parse(fs.readFileSync("data/concussiontracker.json", 'utf8'));
         res.render('summary.ejs');
+});
+
+
+app.get('/symptoms', function(req, res){
+        res.locals.data = JSON.parse(fs.readFileSync("data/concussiontracker.json", 'utf8'));
+        res.render('symptoms.ejs');
 });
 app.listen(port);
 
